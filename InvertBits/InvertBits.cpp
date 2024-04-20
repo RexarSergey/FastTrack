@@ -5,6 +5,7 @@
 #include <bitset>
 #include <thread>
 #include <algorithm>
+#include <variant>
 
 
 constexpr uint64_t n = 10000;
@@ -78,6 +79,7 @@ void ParallelInvertBits(uint64_t* begin, const uint64_t length, const uint64_t p
 
 int main()
 {
+	std::variant<int> var;
 	Generate();
 	uint64_t array_before[n];
 	std::copy(array, array + n, array_before);
