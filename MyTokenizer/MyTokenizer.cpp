@@ -45,7 +45,6 @@ int main()
 {
 	// Test
 	std::string input = "1 + 2 - 3 * 4 / (abs(5) % sqr(6)) & lala(7)";
-
 	/*std::string input = "";
 	std::getline(std::cin, input);*/
 
