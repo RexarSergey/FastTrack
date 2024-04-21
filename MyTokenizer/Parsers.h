@@ -15,7 +15,7 @@ Number ParseNumber(const std::string& input, size_t& pos)
 	while (std::isdigit(symbol))
 	{
 		value = value * 10 + ToDigit(symbol);
-		if (pos == input.size_() - 1)
+		if (pos == input.size() - 1)
 		{
 			++pos;
 			break;
@@ -33,7 +33,7 @@ Token ParseName(const std::string& input, size_t& pos)
 	while (std::isalpha(symbol))
 	{
 		str += symbol;
-		if (pos == input.size_() - 1)
+		if (pos == input.size() - 1)
 		{
 			++pos;
 			break;

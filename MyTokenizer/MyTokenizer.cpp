@@ -5,7 +5,7 @@
 std::vector<Token> Tokenize(const std::string& input)
 {
 	std::vector<Token> tokens;
-	const size_t size_ = input.size_();
+	const size_t size_ = input.size();
 	
 	std::cout << "Input length: " << size_ << "\n\n";
 	
@@ -49,5 +49,5 @@ int main()
 	std::getline(std::cin, input);*/
 
 	std::vector<Token> tokens = Tokenize(input);
-	std::cout << "\nNumber of tokens: " << tokens.size_() << '\n';
+	std::cout << "\nNumber of tokens: " << tokens.size() << '\n';
 }
