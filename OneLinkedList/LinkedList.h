@@ -11,7 +11,7 @@ public:
 	// Main functions for task
 	void add(T val);
 	void remove(T val);
-	bool contains(int val);
+	int contains(int val);
 
 	// Additional functions
 	void add(int pos, T val);
@@ -112,18 +112,20 @@ inline void LinkedList<T>::remove(T val)
 }
 
 template<typename T>
-inline bool LinkedList<T>::contains(int val)
+inline int LinkedList<T>::contains(int val)
 {
+	int pos = 0;
 	Node<T>* curr = head_;
 	while (curr)
 	{
 		if (curr->val == val)
 		{
-			return true;
+			return pos;
 		}
+		++pos;
 		curr = curr->next;
 	}
-	return false;
+	return -1;
 }
 
 template<typename T>

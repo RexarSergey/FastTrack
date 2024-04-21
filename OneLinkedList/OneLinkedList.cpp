@@ -1,4 +1,5 @@
 #include <iostream>
+#include <format>
 #include "LinkedList.h"
 
 
@@ -27,8 +28,10 @@ int main()
     linkedList.print();
     std::cout << '\n';
 
-    std::cout << (linkedList.contains(3) ? "Contains\n" : "Not founded\n");
-    std::cout << (linkedList.contains(33) ? "Contains\n" : "Not founded\n");
+    int pos = linkedList.contains(3);
+    std::cout << (pos != -1 ? std::format("3 contains on position {}\n", pos) : "3 not founded\n");
+    pos = linkedList.contains(33);
+    std::cout << (pos != -1 ? std::format("33 contains on position {}\n", pos) : "33 not founded\n");
     std::cout << '\n';
 
     linkedList.clear();
