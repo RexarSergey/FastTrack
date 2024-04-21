@@ -57,17 +57,17 @@ uint64_t ParallelCountBits(uint64_t* begin, uint64_t* end, Function func) {
     if (begin == end) {
         return 0;
     }
-    const size_t size = end - begin;
+    const size_t size_ = end - begin;
     const size_t min_job_size = 1000;
     const size_t hardware_threads = std::thread::hardware_concurrency();
     const size_t max_threads = 2;//(hardware_threads == 0 ? 2 : hardware_threads);
-    const size_t num_threads = std::min(max_threads, (size + min_job_size - 1) / min_job_size);
+    const size_t num_threads = std::min(max_threads, (size_ + min_job_size - 1) / min_job_size);
 
     std::vector<uint64_t> results(num_threads, 0u);
     std::vector<std::thread> threads;
     threads.reserve(num_threads - 1);
     auto first = begin;
-    const auto block_size = size / num_threads;
+    const auto block_size = size_ / num_threads;
     for (size_t i = 0; i < num_threads - 1; ++i) {
         const auto last = first + block_size;
         threads.emplace_back(CountBits, first, last, func, std::ref(results[i]));

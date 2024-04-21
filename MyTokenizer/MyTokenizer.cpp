@@ -5,12 +5,12 @@
 std::vector<Token> Tokenize(const std::string& input)
 {
 	std::vector<Token> tokens;
-	const size_t size = input.size();
+	const size_t size_ = input.size_();
 	
-	std::cout << "Input length: " << size << "\n\n";
+	std::cout << "Input length: " << size_ << "\n\n";
 	
 	size_t pos = 0;
-	while (pos < size)
+	while (pos < size_)
 	{
 		const auto symbol = static_cast<unsigned char>(input[pos]);
 		if (std::isspace(symbol))
@@ -49,5 +49,5 @@ int main()
 	std::getline(std::cin, input);*/
 
 	std::vector<Token> tokens = Tokenize(input);
-	std::cout << "\nNumber of tokens: " << tokens.size() << '\n';
+	std::cout << "\nNumber of tokens: " << tokens.size_() << '\n';
 }
