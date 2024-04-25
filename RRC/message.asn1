@@ -1,0 +1,13 @@
+MyRRC DEFINITIONS ::= BEGIN
+
+Message ::= SEQUENCE {
+messageStatus EMessageStatus,
+number UTF8String
+}
+
+EMessageStatus ::= ENUMERATED {
+client,
+server
+}
+
+END
